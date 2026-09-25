@@ -25,3 +25,17 @@ h1 {
 .post p {
     margin: 10px 0;
 }
+
+.add-button {
+    display: inline-block;
+    padding: 10px 18px;
+    margin-bottom: 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.add-button:hover {
+    background-color: #555;
+}
