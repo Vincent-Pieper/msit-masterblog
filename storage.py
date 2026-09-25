@@ -36,6 +36,14 @@ def create_new_blogpost(new_post: dict, new_id: int) -> dict:
         "content": new_post["content"]
     }
 
+
+def delete_blogpost_by_id(blog_posts: list[dict], post_id: int) -> None:
+    for current_index, post in enumerate(blog_posts, start=0):
+        if post["id"] == post_id:
+            blog_posts.pop(current_index)
+            return
+
+
 def reorder_blogposts_by_id(blog_posts: list[dict]) -> None:
     blog_posts.sort(key=lambda x: x["id"])
 
