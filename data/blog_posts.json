@@ -1,32 +1,62 @@
 [
     {
         "id": 1,
-        "author": "John Doe",
-        "title": "First Post",
-        "content": "This is my first post."
+        "author": "Patrick Süskind",
+        "title": "Das Parfum",
+        "content": "Ein düsterer historischer Roman über Jean-Baptiste Grenouille und seine außergewöhnliche Besessenheit von Gerüchen."
+    },
+    {
+        "id": 2,
+        "author": "Paulo Coelho",
+        "title": "Der Alchimist",
+        "content": "Ein junger Hirte begibt sich auf eine Reise, um seinen persönlichen Traum und seinen eigenen Lebensweg zu finden."
     },
     {
         "id": 3,
-        "author": "test",
-        "title": "test",
-        "content": "test\r\n"
+        "author": "Michael Ende",
+        "title": "Die unendliche Geschichte",
+        "content": "Bastian entdeckt ein geheimnisvolles Buch und wird immer tiefer in die fantastische Welt Phantásiens hineingezogen."
+    },
+    {
+        "id": 4,
+        "author": "Rosamunde Pilcher",
+        "title": "Die Muschelsucher",
+        "content": "Eine Familiengeschichte über Erinnerungen, Beziehungen und die Entscheidungen, die ein ganzes Leben prägen."
     },
     {
         "id": 5,
-        "author": "tust",
-        "title": "tast",
-        "content": "tjahsde"
+        "author": "J. R. R. Tolkien",
+        "title": "Der Herr der Ringe",
+        "content": "Eine Gemeinschaft macht sich auf eine gefährliche Reise, um einen mächtigen Ring zu vernichten und Mittelerde zu retten."
+    },
+    {
+        "id": 6,
+        "author": "Isabel Allende",
+        "title": "Das Geisterhaus",
+        "content": "Die Geschichte mehrerer Generationen einer Familie verbindet politische Umbrüche mit Liebe, Konflikten und magischen Elementen."
     },
     {
         "id": 7,
-        "author": "sad",
-        "title": "sd",
-        "content": "sd"
+        "author": "J. K. Rowling",
+        "title": "Harry Potter und der Gefangene von Askaban",
+        "content": "Harrys drittes Schuljahr in Hogwarts wird von der Flucht eines gefährlichen Gefangenen und Geheimnissen aus seiner Vergangenheit überschattet."
     },
     {
         "id": 8,
-        "author": "sd",
-        "title": "sd",
-        "content": "fdz"
+        "author": "Michael Ende",
+        "title": "Momo",
+        "content": "Ein außergewöhnliches Mädchen stellt sich geheimnisvollen grauen Herren entgegen, die den Menschen ihre Zeit stehlen."
+    },
+    {
+        "id": 9,
+        "author": "Jostein Gaarder",
+        "title": "Sofies Welt",
+        "content": "Eine Jugendliche erhält rätselhafte Briefe und entdeckt auf ungewöhnliche Weise die Geschichte der Philosophie."
+    },
+    {
+        "id": 10,
+        "author": "J. K. Rowling",
+        "title": "Harry Potter und der Stein der Weisen",
+        "content": "Ein Junge erfährt, dass er ein Zauberer ist, und beginnt sein erstes Jahr an der Hogwarts-Schule für Hexerei und Zauberei."
     }
 ]

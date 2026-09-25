@@ -40,5 +40,21 @@ def delete(post_id):
     return redirect(url_for('index'))
 
 
+@app.route('/update/<int:post_id>', methods=['GET', 'POST'])
+def update(post_id):
+    blog_posts = storage.get_json(DATA)
+    post = storage.fetch_blogpost_by_id(blog_posts, post_id)
+    if not post:
+        return "Post not found", 404
+
+    if request.method == 'POST':
+        updates = request.form.to_dict()
+        storage.update_blogpost_by_id(blog_posts, post_id, updates)
+        storage.save_json(DATA, blog_posts)
+        return redirect(url_for('index'))
+
+    return render_template('update.html', post=post)
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

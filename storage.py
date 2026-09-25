@@ -2,12 +2,12 @@ import json
 
 
 def get_json(filename: str) -> list[dict]:
-    with open(filename, "r") as json_read:
+    with open(filename, "r", encoding="utf-8") as json_read:
         return json.load(json_read)
 
 
 def save_json(filename: str, file: list[dict]):
-    with open(filename, "w") as json_write:
+    with open(filename, "w", encoding="utf-8") as json_write:
         json_write.write(json.dumps(file, indent=4))
 
 
@@ -41,6 +41,20 @@ def delete_blogpost_by_id(blog_posts: list[dict], post_id: int) -> None:
     for current_index, post in enumerate(blog_posts, start=0):
         if post["id"] == post_id:
             blog_posts.pop(current_index)
+            return
+
+
+def fetch_blogpost_by_id(blog_posts: list[dict], post_id: int) -> dict[str, int | str] | None:
+    for post in blog_posts:
+        if post["id"] == post_id:
+            return post
+
+
+def update_blogpost_by_id(blog_posts: list[dict], post_id: int, updates: dict[str, int | str]) -> None:
+    for post in blog_posts:
+        if post["id"] == post_id:
+            for key in updates:
+                post[key] = updates[key]
             return
 
 

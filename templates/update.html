@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Blog Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Update Blog Post</h1>
+
+    <form action="{{ url_for('update', post_id=post.id) }}" method="POST">
+
+    {% for key, value in post.items() %}
+        {% if key != "id" %}
+
+            <label for="{{ key }}">{{ key.title() }}:</label><br>
+
+            {% if key == "content" %}
+                <textarea id="{{ key }}" name="{{ key }}">{{ value }}</textarea>
+            {% else %}
+                <input type="text" id="{{ key }}" name="{{ key }}" value="{{ value }}">
+            {% endif %}
+
+            <br><br>
+
+        {% endif %}
+    {% endfor %}
+
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>
