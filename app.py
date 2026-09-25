@@ -10,12 +10,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
+    """Display all blog posts on the homepage."""
     blog_posts = storage.get_json(DATA)
     return render_template("index.html", posts=blog_posts)
 
 
 @app.route("/add", methods=["GET", "POST"])
 def add():
+    """Display the add form and save a new blog post."""
     if request.method == "POST":
         new_input = request.form.to_dict()
         blog_posts = storage.get_json(DATA)
@@ -34,14 +36,16 @@ def add():
 
 @app.route("/delete/<int:post_id>")
 def delete(post_id):
+    """Delete a blog post by its ID and redirect to the homepage."""
     blog_posts = storage.get_json(DATA)
     storage.delete_blogpost_by_id(blog_posts, post_id)
     storage.save_json(DATA, blog_posts)
     return redirect(url_for('index'))
 
 
-@app.route('/update/<int:post_id>', methods=['GET', 'POST'])
+@app.route("/update/<int:post_id>", methods=["GET", "POST"])
 def update(post_id):
+    """Display the update form and save changes to an existing blog post."""
     blog_posts = storage.get_json(DATA)
     post = storage.fetch_blogpost_by_id(blog_posts, post_id)
     if not post:
