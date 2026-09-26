@@ -9,17 +9,25 @@
 <body>
     <h1>Add a New Blog Post</h1>
 
-    <form method="POST" action="{{ url_for('add') }}">
-        <label for="author">Author:</label><br>
-        <input type="text" id="author" name="author" required><br><br>
+    <div class="form-card">
+        <form method="POST" action="{{ url_for('add') }}">
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input class="form-control" type="text" id="author" name="author" required>
+            </div>
 
-        <label for="title">Title:</label><br>
-        <input type="text" id="title" name="title" required><br><br>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input class="form-control" type="text" id="title" name="title" required>
+            </div>
 
-        <label for="content">Content:</label><br>
-        <textarea id="content" name="content" rows="8" cols="50" required></textarea><br><br>
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <textarea class="form-control" id="content" name="content" rows="8" required></textarea>
+            </div>
 
-        <input type="submit" value="Add Post">
-    </form>
+            <input class="btn btn-accent form-submit" type="submit" value="Add Post">
+        </form>
+    </div>
 </body>
 </html>

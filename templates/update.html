@@ -9,25 +9,34 @@
 <body>
     <h1>Update Blog Post</h1>
 
-    <form action="{{ url_for('update', post_id=post.id) }}" method="POST">
+    <div class="form-card">
+        <form action="{{ url_for('update', post_id=post.id) }}" method="POST">
 
-    {% for key, value in post.items() %}
-        {% if key != "id" %}
+            {% for key, value in post.items() %}
+                {% if key != "id" %}
 
-            <label for="{{ key }}">{{ key.title() }}:</label><br>
+                    <div class="form-group">
+                        <label for="{{ key }}">{{ key.title() }}:</label>
 
-            {% if key == "content" %}
-                <textarea id="{{ key }}" name="{{ key }}">{{ value }}</textarea>
-            {% else %}
-                <input type="text" id="{{ key }}" name="{{ key }}" value="{{ value }}">
-            {% endif %}
+                        {% if key == "content" %}
+                            <textarea class="form-control"
+                                      id="{{ key }}"
+                                      name="{{ key }}"
+                                      rows="8">{{ value }}</textarea>
+                        {% else %}
+                            <input class="form-control"
+                                   type="text"
+                                   id="{{ key }}"
+                                   name="{{ key }}"
+                                   value="{{ value }}">
+                        {% endif %}
+                    </div>
 
-            <br><br>
+                {% endif %}
+            {% endfor %}
 
-        {% endif %}
-    {% endfor %}
-
-    <input type="submit" value="Update">
-</form>
+            <input class="btn btn-accent form-submit" type="submit" value="Update">
+        </form>
+    </div>
 </body>
 </html>
